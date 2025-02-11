@@ -1,13 +1,14 @@
 import React from 'react';
-import RegisterVoter from './components/RegisterVoter';
+import RegistrationForm from './components/RegistrationForm';
+import './assets/styles.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Voter ID System</h1>
-      <RegisterVoter />
+      <h1>Blockchain Voter Registration</h1>
+      <RegistrationForm />
     </div>
   );
 }
 
-export default App;
+export default App;  

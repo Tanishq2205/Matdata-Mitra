@@ -1,0 +1,12 @@
+{
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "scripts": {
+        "build": "truffle compile",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}

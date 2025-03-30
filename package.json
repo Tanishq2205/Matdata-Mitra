@@ -1,12 +1,19 @@
 {
-    "engines": {
-        "node": ">=16.0.0"
+    "name": "voter-contracts",
+    "version": "1.0.0",
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.9.0",
+        "@truffle/hdwallet-provider": "^2.1.15",
+        "dotenv": "^16.0.3",
+        "web3": "^1.10.0"
     },
     "scripts": {
-        "build": "truffle compile",
-        "start": "node server.js"
+        "compile": "truffle compile",
+        "test": "truffle test",
+        "migrate": "truffle migrate",
+        "migrate:rinkeby": "truffle migrate --network rinkeby"
     },
-    "dependencies": {
-        "express": "^4.21.2"
+    "devDependencies": {
+        "truffle": "^5.11.5"
     }
 }

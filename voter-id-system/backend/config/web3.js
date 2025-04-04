@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import Web3 from 'web3';
-import ContractABI from './ContractABI.json' assert { type: 'json' };
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
 const providerUrl = process.env.ETH_PROVIDER_URL || process.env.INFURA_URL;
 if (!providerUrl) {
@@ -35,6 +37,15 @@ const contractAddress = process.env.CONTRACT_ADDRESS;
 if (!contractAddress) {
   throw new Error("CONTRACT_ADDRESS is not defined in environment variables.");
 }
+
+// Get the directory path
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load the contract ABI using fs
+const ContractABI = JSON.parse(
+  readFileSync(path.join(__dirname, './ContractABI.json'), 'utf8')
+);
 
 // Create the contract instance using the ABI. 
 const contract = new web3.eth.Contract(ContractABI.abi || ContractABI, contractAddress);

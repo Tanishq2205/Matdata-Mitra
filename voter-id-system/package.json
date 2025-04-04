@@ -1,0 +1,22 @@
+{
+  "name": "voter-id-system",
+  "version": "1.0.0",
+  "description": "Blockchain-based Voter ID System",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "install-client": "cd client && npm install",
+    "install-backend": "cd backend && npm install",
+    "build-client": "cd client && npm run build",
+    "build": "npm run install-backend && npm run install-client && npm run build-client",
+    "dev-client": "cd client && npm start",
+    "dev-backend": "cd backend && npm start",
+    "dev": "concurrently \"npm run dev-backend\" \"npm run dev-client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+} 
